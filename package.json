@@ -1,0 +1,25 @@
+{
+  "name": "endroll",
+  "version": "1.0.0",
+  "description": "",
+  "main": "capture.js",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "gsap": "^3.0.2",
+    "puppeteer": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hirokawai/endroll.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hirokawai/endroll/issues"
+  },
+  "homepage": "https://github.com/hirokawai/endroll#readme"
+}
