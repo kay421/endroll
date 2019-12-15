@@ -16,7 +16,7 @@ body {
 	--color-link-hover: #dc6e25;
 	--aspect-ratio: 1/1.5;
 	--imgwidthmax: 500px;
-	--size-title: 10rem;
+	--size-title: 5rem;
 	--font-weight-title: 400;
 	color: var(--color-text);
 	background-color: var(--color-bg);
@@ -244,7 +244,7 @@ a:focus {
 	max-width: 100%;
 	position: relative;
 	will-change: transform;
-	margin-bottom: 20vh;
+	margin-bottom: 23vh;
 	display: grid;
 	grid-template-columns: 50% 50%;
 }
@@ -289,7 +289,7 @@ a:focus {
 
 .content__item-imgwrap {
 	position: relative;
-	--imgwidth: 100%;
+	--imgwidth: 70%;
 	margin: 0 auto;
 	grid-area: 1 / 1 / 3 / 3;
 	overflow: hidden;
@@ -387,7 +387,7 @@ a:focus {
 
 .content--alternate .content__item-title,
 .content__item--wide:nth-child(even) .content__item-description {
-	grid-area: 3 / 1 / 4 / 2;
+	grid-area: 2 / 1 / 4 / 2;
 	justify-self: start;
 }
 
