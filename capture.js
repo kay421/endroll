@@ -69,6 +69,38 @@ const write = (stream, buffer) =>
     const page = await browser.newPage();
 
     await page.goto(
+        "https://qiita.com/advent-calendar/2019/lifull"
+        , { waitUntil: 'networkidle0' }     
+    );
+
+    const scrapingData = await page.evaluate(() => {
+        const dataList = [];
+        const nodeList = document.querySelectorAll(".adventCalendarItem");
+
+        nodeList.forEach(_node => {
+            const calendar = _node.children[0].innerText
+            const author = _node.children[1].children[0].getAttribute('href').slice(1);
+            const title = _node.children[1].children[1].firstElementChild.innerText
+            dataList.push({calendar,author,title});
+        })
+        return dataList;
+    });
+
+    await page.setRequestInterception(true);
+    page.on('request', request => {
+        if (request.url() === "http://hirokawai.mock.server/rss") {
+            request.respond({
+                content: 'application/json',
+                headers: {"Access-Control-Allow-Origin": "*"},
+                body: JSON.stringify(scrapingData)
+            });
+        }
+        else {
+            request.continue();
+        }
+    });    
+    
+    await page.goto(
         process.argv[2]
         , { waitUntil: 'networkidle0' }
     );
