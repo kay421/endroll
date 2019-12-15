@@ -263,7 +263,7 @@
                     {
                         var content = document.getElementById("content");
                         var idx = 1;
-                        for (const item of (this.response.items).reverse()) {
+                        for (const item of this.response) {
                             var str = `
                             <div class="content--full content--alternate">
                             <div class="content__item content__item--wide">
@@ -286,7 +286,7 @@
                 }
             }
 
-            xmlHttpRequest.open( 'GET', 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fqiita.com%2Fadvent-calendar%2F2019%2Flifull%2Ffeed', true );
+            xmlHttpRequest.open( 'GET', 'http://hirokawai.mock.server/rss', true );
             xmlHttpRequest.responseType = 'json';
             xmlHttpRequest.send( null );
         });
